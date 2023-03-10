@@ -2,11 +2,14 @@ import React,{useState, useEffect} from "react";
 import Search from "./Search";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
+import AllButtons from "./AllButtons";
+import Option1 from "./Option1";
 
 function NoteContainer() {
   const [notes,setNotes]=useState([]);
   const [noteSelected, setNoteSeleted] = useState({})
   const [searchedNotes, setsearchedNotes] = useState([])
+  
  
   useEffect(()=>{
     fetch("http://localhost:3000/notes")
@@ -82,9 +85,13 @@ function NoteContainer() {
       }) */
     setsearchedNotes(newNote)
   }
-  
+  function handleCountClick(countFromOption){
+    console.log("count",countFromOption)
+  }
   return (
     <>
+   {/*  <AllButtons/> */}
+   <Option1 />
       <Search  onSearch={handleSearch}/>
       <div className="container">
         <Sidebar notes={searchedNotes}  onNoteClick={handleNOteClick} newClick={handleNewClick}/>
