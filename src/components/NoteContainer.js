@@ -29,7 +29,14 @@ function NoteContainer() {
    
     const updatedNotes=notes.filter((note)=>{return (note.title.toLowerCase().includes(searchValue.toLowerCase()))})
     
+    
     setsearchedNotes(updatedNotes)
+  }
+  function handleSearch2(searchValue){
+   
+    const updatedNotes=notes.filter((note)=>{return (note.title.toLowerCase().includes(searchValue.toLowerCase()))})
+    
+   
     setsearchedNotes(updatedNotes)
   }
   function handleSavedClicked(formData,note){
@@ -96,7 +103,7 @@ function NoteContainer() {
    {/*  <AllButtons/> */}
    {/* <Option1 /> */}
    {/* <Option2/> */}
-   <Option3 onSearch={handleSearch}/>
+   <Option3 onSearch={handleSearch2}/>
       <Search  onSearch={handleSearch}/>
       <div className="container">
         <Sidebar notes={searchedNotes}  onNoteClick={handleNOteClick} newClick={handleNewClick}/>

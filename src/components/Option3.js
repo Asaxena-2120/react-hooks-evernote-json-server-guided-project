@@ -19,22 +19,19 @@ function Option3({onSearch}) {
       console.log(e.target.value)
       setFormData({
         ...formData,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       });
       onSearch(formData.name)
-      //onSearch(document.getElementById("search-bar").value)
-    }
-    function handleSubmit(e){
-      e.preventDefault()
-      console.log(formData)
+      
     }
     
-    console.log("hi")
+    
+    
     return (
       <div className="filter">
-        <form onSubmit={handleSubmit}>
+        <form >
         <input id="search-bar" type="text"  value ={formData.name} name="name" onChange={handleChange} placeholder="Search Notes" />
-        <button type="submit">Submit</button>
+        
         </form>
       </div>
     );
