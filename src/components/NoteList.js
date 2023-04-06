@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import NoteItem from "./NoteItem";
 
 function NoteList({notes, onClick}) {
+ 
+
   function click(note){
     
     onClick(note)
@@ -9,10 +11,15 @@ function NoteList({notes, onClick}) {
   const notesList=notes.map((note)=>(<NoteItem key={note.id} note={note}
   handleClick={click}/>))
   return (
+    
     <ul>
       {notesList}
-     
+    
+            
+        
     </ul>
+    
+
   );
 }
 

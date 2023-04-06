@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 import Content from "./Content";
 import AllButtons from "./AllButtons";
 import Option1 from "./Option1";
+import Option2 from "./Option2";
+import Option3 from "./Option3";
 
 function NoteContainer() {
   const [notes,setNotes]=useState([]);
@@ -27,6 +29,7 @@ function NoteContainer() {
    
     const updatedNotes=notes.filter((note)=>{return (note.title.toLowerCase().includes(searchValue.toLowerCase()))})
     
+    setsearchedNotes(updatedNotes)
     setsearchedNotes(updatedNotes)
   }
   function handleSavedClicked(formData,note){
@@ -91,7 +94,9 @@ function NoteContainer() {
   return (
     <>
    {/*  <AllButtons/> */}
-   <Option1 />
+   {/* <Option1 /> */}
+   {/* <Option2/> */}
+   <Option3 onSearch={handleSearch}/>
       <Search  onSearch={handleSearch}/>
       <div className="container">
         <Sidebar notes={searchedNotes}  onNoteClick={handleNOteClick} newClick={handleNewClick}/>
